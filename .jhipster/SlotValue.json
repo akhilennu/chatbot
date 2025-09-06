@@ -1,0 +1,23 @@
+{
+  "annotations": {
+    "changelogDate": "20250906130002"
+  },
+  "applications": "*",
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "slotName",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "slotValue",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "name": "SlotValue",
+  "relationships": [],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

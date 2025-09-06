@@ -1,0 +1,48 @@
+{
+  "annotations": {
+    "changelogDate": "20250906130000"
+  },
+  "applications": "*",
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "conversationId",
+      "fieldType": "UUID",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "ConversationStatus",
+      "fieldValues": "OPEN,CLOSED"
+    },
+    {
+      "fieldName": "channelName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "startTime",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "endTime",
+      "fieldType": "Instant"
+    }
+  ],
+  "name": "Conversation",
+  "relationships": [
+    {
+      "otherEntityName": "chatMessage",
+      "relationshipName": "chatMessages",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "slotValue",
+      "relationshipName": "slotValues",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

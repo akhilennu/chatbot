@@ -1,0 +1,48 @@
+{
+  "annotations": {
+    "changelogDate": "20250906125956"
+  },
+  "applications": "*",
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "type",
+      "fieldType": "IntentType",
+      "fieldValues": "DEFAULT,BOT"
+    },
+    {
+      "fieldName": "respType",
+      "fieldType": "IntentRespType",
+      "fieldValues": "MISSING_ENTITY_FLOW,DECISION_TREE,DIRECT_RESPONSE,QUESTIONNAIRE"
+    }
+  ],
+  "name": "Intent",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityName": "responseData",
+      "relationshipName": "responseData",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-one"
+    },
+    {
+      "otherEntityName": "utterance",
+      "relationshipName": "utterances",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "intentEntity",
+      "relationshipName": "intentEntities",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

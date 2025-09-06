@@ -1,0 +1,25 @@
+{
+  "annotations": {
+    "changelogDate": "20250906125957"
+  },
+  "applications": "*",
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "type",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "content",
+      "fieldType": "TextBlob"
+    },
+    {
+      "fieldName": "channelName",
+      "fieldType": "String"
+    }
+  ],
+  "name": "ResponseData",
+  "relationships": [],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

@@ -46,6 +46,22 @@ public class CacheConfiguration {
             createCache(cm, io.akhilennu.chatbot.domain.User.class.getName());
             createCache(cm, io.akhilennu.chatbot.domain.Authority.class.getName());
             createCache(cm, io.akhilennu.chatbot.domain.User.class.getName() + ".authorities");
+            createCache(cm, io.akhilennu.chatbot.domain.Bot.class.getName());
+            createCache(cm, io.akhilennu.chatbot.domain.Bot.class.getName() + ".intents");
+            createCache(cm, io.akhilennu.chatbot.domain.Bot.class.getName() + ".botTrainings");
+            createCache(cm, io.akhilennu.chatbot.domain.Intent.class.getName());
+            createCache(cm, io.akhilennu.chatbot.domain.Intent.class.getName() + ".utterances");
+            createCache(cm, io.akhilennu.chatbot.domain.Intent.class.getName() + ".intentEntities");
+            createCache(cm, io.akhilennu.chatbot.domain.ResponseData.class.getName());
+            createCache(cm, io.akhilennu.chatbot.domain.IntentEntity.class.getName());
+            createCache(cm, io.akhilennu.chatbot.domain.Utterance.class.getName());
+            createCache(cm, io.akhilennu.chatbot.domain.Conversation.class.getName());
+            createCache(cm, io.akhilennu.chatbot.domain.Conversation.class.getName() + ".chatMessages");
+            createCache(cm, io.akhilennu.chatbot.domain.Conversation.class.getName() + ".slotValues");
+            createCache(cm, io.akhilennu.chatbot.domain.ChatMessage.class.getName());
+            createCache(cm, io.akhilennu.chatbot.domain.SlotValue.class.getName());
+            createCache(cm, io.akhilennu.chatbot.domain.BotTraining.class.getName());
+            createCache(cm, io.akhilennu.chatbot.domain.UtteranceIntent.class.getName());
             // jhipster-needle-caffeine-add-entry
         };
     }

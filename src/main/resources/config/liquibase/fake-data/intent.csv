@@ -1,0 +1,11 @@
+id;name;type;resp_type
+1;blaspheme;BOT;DIRECT_RESPONSE
+2;from vibration;BOT;DIRECT_RESPONSE
+3;while but;DEFAULT;QUESTIONNAIRE
+4;amongst;BOT;DECISION_TREE
+5;determined greedily whispered;DEFAULT;DIRECT_RESPONSE
+6;though madly;DEFAULT;DECISION_TREE
+7;innocently babyish;BOT;MISSING_ENTITY_FLOW
+8;solidly parsnip;BOT;DECISION_TREE
+9;technologist optimistically pish;BOT;MISSING_ENTITY_FLOW
+10;pish;DEFAULT;DIRECT_RESPONSE

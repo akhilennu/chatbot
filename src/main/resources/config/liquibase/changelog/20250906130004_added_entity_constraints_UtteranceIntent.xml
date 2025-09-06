@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <!--
+        Added the constraints for entity UtteranceIntent.
+    -->
+    <changeSet id="20250906130004-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="utterance_id"
+                                 baseTableName="utterance_intent"
+                                 constraintName="fk_utterance_intent__utterance_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="utterance"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="intent_entity_id"
+                                 baseTableName="utterance_intent"
+                                 constraintName="fk_utterance_intent__intent_entity_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="intent_entity"
+                                 />
+    </changeSet>
+</databaseChangeLog>

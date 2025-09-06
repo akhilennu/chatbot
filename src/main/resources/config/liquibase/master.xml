@@ -12,7 +12,24 @@
     <property name="timeType" value="time(6)" dbms="postgresql"/>
 
     <include file="config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20250906125955_added_entity_Bot.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20250906125956_added_entity_Intent.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20250906125957_added_entity_ResponseData.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20250906125958_added_entity_IntentEntity.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20250906125959_added_entity_Utterance.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20250906130000_added_entity_Conversation.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20250906130001_added_entity_ChatMessage.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20250906130002_added_entity_SlotValue.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20250906130003_added_entity_BotTraining.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20250906130004_added_entity_UtteranceIntent.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
+    <include file="config/liquibase/changelog/20250906125956_added_entity_constraints_Intent.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20250906125958_added_entity_constraints_IntentEntity.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20250906125959_added_entity_constraints_Utterance.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20250906130001_added_entity_constraints_ChatMessage.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20250906130002_added_entity_constraints_SlotValue.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20250906130003_added_entity_constraints_BotTraining.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20250906130004_added_entity_constraints_UtteranceIntent.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
     <!-- jhipster-needle-liquibase-add-incremental-changelog - JHipster will add incremental liquibase changelogs here -->
 </databaseChangeLog>

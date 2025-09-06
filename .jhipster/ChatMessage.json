@@ -1,0 +1,33 @@
+{
+  "annotations": {
+    "changelogDate": "20250906130001"
+  },
+  "applications": "*",
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "sender",
+      "fieldType": "MessageSender",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "USER,BOT"
+    },
+    {
+      "fieldName": "message",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "timestamp",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "channelName",
+      "fieldType": "String"
+    }
+  ],
+  "name": "ChatMessage",
+  "relationships": [],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

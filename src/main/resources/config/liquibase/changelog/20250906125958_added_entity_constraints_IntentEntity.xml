@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <!--
+        Added the constraints for entity IntentEntity.
+    -->
+    <changeSet id="20250906125958-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="missing_entity_response_id"
+                                 baseTableName="intent_entity"
+                                 constraintName="fk_intent_entity__missing_entity_response_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="response_data"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="intent_id"
+                                 baseTableName="intent_entity"
+                                 constraintName="fk_intent_entity__intent_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="intent"
+                                 />
+    </changeSet>
+</databaseChangeLog>

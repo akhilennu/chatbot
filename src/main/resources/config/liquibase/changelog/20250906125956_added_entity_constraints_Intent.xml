@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <!--
+        Added the constraints for entity Intent.
+    -->
+    <changeSet id="20250906125956-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="response_data_id"
+                                 baseTableName="intent"
+                                 constraintName="fk_intent__response_data_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="response_data"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="bot_id"
+                                 baseTableName="intent"
+                                 constraintName="fk_intent__bot_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="bot"
+                                 />
+    </changeSet>
+</databaseChangeLog>

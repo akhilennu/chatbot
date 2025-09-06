@@ -1,0 +1,102 @@
+entity Bot {
+  name String required,
+  description String
+} 
+
+entity Intent {
+  name String required,
+  type IntentType,
+  respType IntentRespType
+} 
+
+entity ResponseData {
+  type String,
+  content TextBlob,
+  channelName String
+} 
+
+entity IntentEntity {
+  entityName String
+} 
+
+entity Utterance {
+  text String required
+} 
+
+entity Conversation {
+  conversationId UUID required,
+  status ConversationStatus,
+  channelName String,
+  startTime Instant,
+  endTime Instant
+} 
+
+entity ChatMessage {
+  sender MessageSender required,
+  message String required,
+  timestamp Instant required,
+  channelName String
+} 
+
+entity SlotValue {
+  slotName String required,
+  slotValue String required
+} 
+
+entity BotTraining {
+  trainingTime Instant required,
+  accuracy Double,
+  precision Double,
+  f1Score Double,
+  active Boolean
+}
+
+entity UtteranceIntent {
+  startIndex Integer required,
+  endIndex Integer required
+}
+
+enum ConversationStatus {
+  OPEN,
+  CLOSED
+} 
+
+enum MessageSender {
+  USER,
+  BOT
+} 
+
+enum IntentType {
+  DEFAULT,
+  BOT
+} 
+
+enum IntentRespType {
+  MISSING_ENTITY_FLOW,
+  DECISION_TREE,
+  DIRECT_RESPONSE,
+  QUESTIONNAIRE
+} 
+
+relationship OneToMany {
+  Bot{intents} to Intent
+  Intent{utterances} to Utterance
+  Intent{intentEntities} to IntentEntity
+  Conversation{chatMessages} to ChatMessage
+  Conversation{slotValues} to SlotValue
+  Bot{botTrainings} to BotTraining
+} 
+
+relationship OneToOne {
+  Intent{responseData} to ResponseData
+  IntentEntity{missingEntityResponse} to ResponseData
+}
+
+relationship ManyToOne {
+  UtteranceIntent{utterance} to Utterance,
+  UtteranceIntent{intentEntity} to IntentEntity
+}
+
+service all with serviceClass
+dto all with mapstruct
+paginate Intent, Utterance, Bot with pagination

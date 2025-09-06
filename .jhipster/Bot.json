@@ -1,0 +1,36 @@
+{
+  "annotations": {
+    "changelogDate": "20250906125955"
+  },
+  "applications": "*",
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "String"
+    }
+  ],
+  "name": "Bot",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityName": "intent",
+      "relationshipName": "intents",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "botTraining",
+      "relationshipName": "botTrainings",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}
