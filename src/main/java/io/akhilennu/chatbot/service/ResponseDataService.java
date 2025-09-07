@@ -124,7 +124,8 @@ public class ResponseDataService {
     @Transactional(readOnly = true)
     public Optional<ResponseDataDTO> findOne(Long id) {
         LOG.debug("Request to get ResponseData : {}", id);
-        return responseDataRepository.findById(id).map(responseDataMapper::toDto);
+        Optional<ResponseData> tmp = responseDataRepository.findById(id);
+        return tmp.map(responseDataMapper::toDto);
     }
 
     /**

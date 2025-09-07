@@ -26,8 +26,7 @@ public class ResponseData implements Serializable {
     @Column(name = "type")
     private String type;
 
-    @Lob
-    @Column(name = "content")
+    @Column(name = "content", columnDefinition = "text")
     private String content;
 
     @Column(name = "channel_name")

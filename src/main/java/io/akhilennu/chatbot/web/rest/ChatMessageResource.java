@@ -2,7 +2,9 @@ package io.akhilennu.chatbot.web.rest;
 
 import io.akhilennu.chatbot.repository.ChatMessageRepository;
 import io.akhilennu.chatbot.service.ChatMessageService;
+import io.akhilennu.chatbot.service.ChatRequestDTO;
 import io.akhilennu.chatbot.service.dto.ChatMessageDTO;
+import io.akhilennu.chatbot.service.dto.ResponseDataDTO;
 import io.akhilennu.chatbot.web.rest.errors.BadRequestAlertException;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotNull;
@@ -15,7 +17,15 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 import tech.jhipster.web.util.HeaderUtil;
 import tech.jhipster.web.util.ResponseUtil;
 
@@ -40,6 +50,16 @@ public class ChatMessageResource {
     public ChatMessageResource(ChatMessageService chatMessageService, ChatMessageRepository chatMessageRepository) {
         this.chatMessageService = chatMessageService;
         this.chatMessageRepository = chatMessageRepository;
+    }
+
+    @PostMapping("/chat")
+    public ResponseEntity<ResponseDataDTO> chatWithBot(@RequestBody ChatRequestDTO dto) {
+        Long botId = dto.getBotId();
+        String message = dto.getMessage();
+        String sessionId = dto.getSessionId();
+        LOG.debug("REST request to chatWithBot for message : {} with bot : {} with session id : {}", message, botId, sessionId);
+        ResponseDataDTO responseData = chatMessageService.chatWithBot(botId, message, sessionId);
+        return ResponseEntity.ok(responseData);
     }
 
     /**

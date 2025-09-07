@@ -109,4 +109,10 @@ public class IntentService {
         LOG.debug("Request to delete Intent : {}", id);
         intentRepository.deleteById(id);
     }
+
+    public Intent getIntentDetailsByName(String name) {
+        LOG.debug("Request to get Intent Details by name: {}", name);
+        Intent intentDetails = intentRepository.findByName(name);
+        return intentDetails;
+    }
 }

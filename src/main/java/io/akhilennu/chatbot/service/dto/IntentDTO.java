@@ -2,9 +2,11 @@ package io.akhilennu.chatbot.service.dto;
 
 import io.akhilennu.chatbot.domain.enumeration.IntentRespType;
 import io.akhilennu.chatbot.domain.enumeration.IntentType;
-import jakarta.validation.constraints.*;
+import jakarta.validation.constraints.NotNull;
 import java.io.Serializable;
+import java.util.List;
 import java.util.Objects;
+import java.util.Set;
 
 /**
  * A DTO for the {@link io.akhilennu.chatbot.domain.Intent} entity.
@@ -22,6 +24,8 @@ public class IntentDTO implements Serializable {
     private IntentRespType respType;
 
     private ResponseDataDTO responseData;
+
+    private Set<IntentEntityDTO> intentEntities;
 
     private BotDTO bot;
 
@@ -105,5 +109,13 @@ public class IntentDTO implements Serializable {
             ", responseData=" + getResponseData() +
             ", bot=" + getBot() +
             "}";
+    }
+
+    public Set<IntentEntityDTO> getIntentEntities() {
+        return intentEntities;
+    }
+
+    public void setIntentEntities(Set<IntentEntityDTO> intentEntities) {
+        this.intentEntities = intentEntities;
     }
 }
